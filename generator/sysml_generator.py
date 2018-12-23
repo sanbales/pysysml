@@ -3,12 +3,14 @@ import re
 
 import autopep8
 
-from pyecore.resources import ResourceSet
-import pyecore.ecore as ecore
+import pyecore.ecore
+import pyecore.resources
 
-import pyecoregen
 import pyecoregen.adapter
 import pyecoregen.ecore
+
+import pyuml2.types
+import pyuml2.uml
 
 
 def to_snake_case(name):
@@ -19,40 +21,37 @@ def to_snake_case(name):
 @contextlib.contextmanager
 def snake_pythonic_names():
     """ Monkey patch pythonic_names to get snake name for each EOperation. """
-    original_get_attribute = ecore.ENamedElement.__getattribute__
+    original_get_attribute = pyecore.ecore.ENamedElement.__getattribute__
 
     def get_attribute(self, name):
         value = original_get_attribute(self, name)
 
         if name == "name":
             value = pyecoregen.adapter.fix_name_clash(value)
-            if isinstance(self, ecore.EOperation):
+            if isinstance(self, pyecore.ecore.EOperation):
                 value = to_snake_case(value)
 
         return value
 
-    ecore.ENamedElement.__getattribute__ = get_attribute
+    pyecore.ecore.ENamedElement.__getattribute__ = get_attribute
     yield
-    ecore.ENamedElement.__getattribute__ = original_get_attribute
+    pyecore.ecore.ENamedElement.__getattribute__ = original_get_attribute
 
 
 pyecoregen.adapter.pythonic_names = snake_pythonic_names
 
 
 def setup_resourceset():
-    import pyuml2.types as types
-    import pyuml2.uml as uml
-
     ecore_uri = "platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"
     types_uri = "platform:/plugin/org.eclipse.uml2.types/model/Types.ecore"
     uml_uri = "platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"
     uml_profile_uri = "platform:/plugin/org.eclipse.uml2.uml.profile.standard" \
                       "/model/Standard.ecore"
 
-    rset = ResourceSet()
-    rset.metamodel_registry[ecore_uri] = ecore
-    rset.metamodel_registry[types_uri] = types
-    rset.metamodel_registry[uml_uri] = uml
+    rset = pyecore.resources.ResourceSet()
+    rset.metamodel_registry[ecore_uri] = pyecore.ecore
+    rset.metamodel_registry[types_uri] = pyuml2.types
+    rset.metamodel_registry[uml_uri] = pyuml2.uml
     # TODO: add uml_standard_profile (necessary for Refine and Trace)
     return rset
 
