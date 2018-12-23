@@ -143,7 +143,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
           eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEncapsulated" ordered="false"
-          eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Boolean">
+          eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//Boolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="&#xA;              If true, then the block is treated as a black box; a part typed by this black box can only be connected via its ports or directly to its outer boundary. If false, or if a value is not present, then connections can be established to elements of its internal structure via deep-nested connector ends.&#xA;            "/>
         </eAnnotations>
@@ -168,14 +168,14 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Property" ordered="false"
           eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="lower" ordered="false"
-          eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Integer"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//Integer"
           defaultValueLiteral="0">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Gives the minimum number of values of the property at the end of the related bindingPath, for each object reached by navigation along the bindingPath from an instance of the block owning the property to which EndPathMultiplicity is applied"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upper" ordered="false"
-          eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//UnlimitedNatural"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//UnlimitedNatural"
           defaultValueLiteral="-1">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Gives the maximum number of values of the property at the end of the related bindingPath, for each object reached by navigation along the bindingPath from an instance of the block owning the property to which EndPathMultiplicity is applied."/>
@@ -310,7 +310,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAtomic" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+          lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//Boolean"
           changeable="false" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This is a derived attribute (derived from the flow port’s type). For a flow port typed by a flow specification the value of this attribute is False, otherwise the value is True."/>
@@ -439,28 +439,28 @@
         <eParameters name="result" ordered="false" upperBound="-1" eType="#//modelelements/ElementGroup"/>
       </eOperations>
       <eOperations name="criterion" ordered="false" lowerBound="1">
-        <eParameters name="result" ordered="false" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+        <eParameters name="result" ordered="false" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"/>
       </eOperations>
       <eOperations name="member" ordered="false" lowerBound="1">
         <eParameters name="result" ordered="false" upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Element"/>
       </eOperations>
       <eOperations name="size" ordered="false" lowerBound="1">
-        <eParameters name="result" ordered="false" lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
+        <eParameters name="result" ordered="false" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Comment" ordered="false"
           eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Comment"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="criterion" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"
+          lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"
           changeable="false" volatile="true" transient="true" derived="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="member" ordered="false"
           upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Element"
           changeable="false" volatile="true" transient="true" derived="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+          lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="orderedMemeber" upperBound="-1"
           eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Element"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Integer"
+          lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//Integer"
           changeable="false" volatile="true" transient="true" derived="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Expose">
@@ -487,7 +487,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="concernList" ordered="false"
           upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Comment"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="concern" ordered="false"
-          upperBound="-1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"
+          upperBound="-1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"
           changeable="false" volatile="true" transient="true" derived="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="View">
@@ -514,7 +514,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
           eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="concern" ordered="false"
-          upperBound="-1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"
+          upperBound="-1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"
           changeable="false" volatile="true" transient="true" derived="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="concernList" ordered="false"
           upperBound="-1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//Comment">
@@ -523,7 +523,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
-          upperBound="-1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String">
+          upperBound="-1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The languages used to construct the viewpoint."/>
         </eAnnotations>
@@ -536,9 +536,9 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="presentation" ordered="false"
-          upperBound="-1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+          upperBound="-1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="purpose" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String">
+          lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The purpose addresses the stakeholder concerns."/>
         </eAnnotations>
@@ -561,7 +561,7 @@
         <details key="documentation" value="A Copy relationship is a dependency between a supplier requirement and a client requirement that specifies that the text of the client requirement is a read-only copy of the text of the supplier requirement."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Trace" eSuperTypes="#//blocks/DirectedRelationshipPropertyPath ../../../org.eclipse.uml2.uml.profile.standard/model/Standard.ecore#//Trace">
+    <eClassifiers xsi:type="ecore:EClass" name="Trace">
       <eOperations name="getTracedFrom" ordered="false" lowerBound="1">
         <eParameters name="ref" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
         <eParameters name="result" ordered="false" upperBound="-1" eType="#//requirements/Requirement"/>
@@ -588,7 +588,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" lowerBound="1"
-          eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"
           defaultValueLiteral="">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The unique id of the requirement."/>
@@ -616,7 +616,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"
+          lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.uml2.types/model/Types.ecore#//String"
           defaultValueLiteral="">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The textual representation or a reference to the textual representation of the requirement."/>
@@ -642,7 +642,7 @@
         <details key="documentation" value="&#xA;            A DeriveReqt relationship is a dependency between two requirements in which a client requirement can be derived from the supplier requirement. As with other dependencies, the arrow direction points from the derived (client) requirement to the (supplier) requirement from which it is derived.&#xA;          "/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Refine" eSuperTypes="#//blocks/DirectedRelationshipPropertyPath ../../../org.eclipse.uml2.uml.profile.standard/model/Standard.ecore#//Refine">
+    <eClassifiers xsi:type="ecore:EClass" name="Refine">
       <eOperations name="getRefines" ordered="false" lowerBound="1">
         <eParameters name="ref" ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
         <eParameters name="result" ordered="false" upperBound="-1" eType="#//requirements/Requirement"/>
