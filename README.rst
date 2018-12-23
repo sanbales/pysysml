@@ -22,27 +22,21 @@ compatibility with the Eclipse UML2 project.
 Installation
 ============
 
-There is not yet a pypi package, you can manually install the project using:
+There is not yet a pypi package for pysysml nor pyuml, you can manually install
+both projects using:
 
 .. code-block:: shell
 
+    $ pip install git+https://github.com/pyecore/pyuml2
     $ pip install -e .
 
 Documentation
 =============
 
-Here is how to currently load a UML2 model using the implementation.
+This is not currently working as there is an issue with the parsing of the
+SysML ecore model due to unlimited literal being less than zero.
 
-.. code-block:: python
+You can try to build the SysML model by running:
 
-    from pyecore.resources import ResourceSet
-    import pysysml.sysml as sysml
-
-    rset = ResourceSet()
-    rset.metamodel_registry[sysml.nsURI] = sysml
-    resource = rset.get_resource('path/to/my/model.sysml')
-    model = resource.contents[0]
-
-    print(model.name)
-    print(model.packagedElement)
-    print(model.nestedPackage)
+.. code-block:: shell
+    $ python generator/sysml_generator.py
